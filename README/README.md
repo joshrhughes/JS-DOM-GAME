@@ -13,9 +13,9 @@ Buy using the "<-" and "->" keys in single player mode and adding the "a" and "d
 ## Wireframes
 
 [Landing Page](/landing_page.png)
-[Single Player](/single_player.png)
-[Multi Player](/multiplayer.png)
-[Scoreboard](/scoreboard.png)
+![Single Player](/single_player.png)
+![Multi Player](/multiplayer.png)
+![Scoreboard](/scoreboard.png)
 
 ## Trello
 
