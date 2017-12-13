@@ -19,10 +19,15 @@ body{
 	height: 80px;
 	width: 50px;
 	position: absolute;
+	background: yellow;
+	/*top: 500px;
+	left: 390px;*/
 }
 
 #car1{
 	background: blue;
+	top: 500px;
+	left: 390px;
 }
 
 #car2{
