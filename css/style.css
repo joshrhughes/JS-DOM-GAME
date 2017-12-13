@@ -1,0 +1,30 @@
+body{
+	/*background: red;*/
+	width: 800px
+	height: 700px;
+	font-family: 'Press Start 2P', cursive;
+
+}
+
+#gameboard {
+    border:1px solid black;
+    background-color: green;
+    height: 600px;
+    width: 400px;
+    margin-left: 200px;
+    
+}
+
+.car{
+	height: 80px;
+	width: 50px;
+	position: absolute;
+}
+
+#car1{
+	background: blue;
+}
+
+#car2{
+	background: red;
+}
