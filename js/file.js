@@ -6,6 +6,9 @@ $().ready(function(){
   
 console.log("We ready");
 
+	//Has the game started? 
+	var gameStart = false;
+	
 	//Is the game over
 	var gameOver = false;
 
@@ -54,6 +57,13 @@ console.log("We ready");
 	// });
 
 	//**************************************************possibly use animate to make car movement smooth
+	//------TIMER------
+
+	//create time on board
+	$('<div>TIMER</div>').appendTo('#gameboard').attr('id', 'clock');
+	  //$('#clock').css({float: 'left', color: 'black', });
+	
+
 
 	//------OBSTACLES------
 	var ob1Speed = 5000;
@@ -62,10 +72,10 @@ console.log("We ready");
 
 	//Creates obsacles at top
 	function createRanOb (){	
-	  var array = [ 15]; //lanes on y axis
+	  var array = [ 15, 75, 300, 500]; //lanes on y axis
 	  var randomOb = array[Math.floor(Math.random() * array.length)];
-	  $('<div>'+ ob1Num +'</div>').appendTo('#gameboard').attr('id', 'ob1n' + ob1Num).addClass('ob1 ob');
-	  $('#ob1n' + ob1Num).css({left:randomOb,});
+	  $('<div></div>').appendTo('#gameboard').attr('id', 'ob1n' + ob1Num).addClass('ob1 ob');
+	  $('#ob1n' + ob1Num).css({left:randomOb, zIndex: '-1'});
 	  $('#ob1n' + ob1Num).velocity({top:'700px'}, ob1Speed, 'linear',function() {
 	    $(this).remove();
 	  
@@ -105,7 +115,9 @@ function obPosition() {
     } else {
       car1running = false;
       $(this).stop();
-      console.log(true + " dead");
+      alert("you dead");
+      return;
+      // console.log(true + " dead");
     }
   });
 }  
@@ -116,13 +128,6 @@ setInterval(function() {
   obPosition();
 }, checkObPos);
 
-
-
-
-
-
-
- 
 
 
 });//End brackets for ready

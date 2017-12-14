@@ -15,36 +15,48 @@ body{
     margin-left: 200px;
    overflow: hidden;
    position: relative;
+   z-index: -5;
     
 }
 
+#clock {
+	float: left;
+	margin: 30px;
+	color: white;	
+	z-index: 3;
+}
+
 .car{
-	height: 80px;
-	width: 50px;
+	height: 91px;
+	width: 42px;
 	position: absolute;
 	background: yellow;
-	/*top: 500px;
-	left: 390px;*/
+	
 }
 
 #car1{
-	background: blue;
+	
 	top: 500px;
 	left: 165px;
+	background: url("../assets/4runner1.png") no-repeat;
+	background-size: 100%;
 }
 
 #car2{
 	background: red;
 }
 
-.ob1{
-	top: -150px;
-}
-
 
 .ob{
-	height: 80px;
-	width: 50px;
+	height: 90px;
+	width: 40px;
 	position: absolute;
-	background: yellow;
+	background: grey;
+}
+.ob1{
+	height: 100px;
+	top: -150px;
+	background: url("../assets/carOb1.png") no-repeat;
+	background-size: 100%;
+
 }
