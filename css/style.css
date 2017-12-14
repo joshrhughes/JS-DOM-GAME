@@ -30,7 +30,7 @@ body{
 #car1{
 	background: blue;
 	top: 500px;
-	left: 175px;
+	left: 165px;
 }
 
 #car2{
@@ -39,4 +39,12 @@ body{
 
 .ob1{
 	top: -150px;
+}
+
+
+.ob{
+	height: 80px;
+	width: 50px;
+	position: absolute;
+	background: yellow;
 }
