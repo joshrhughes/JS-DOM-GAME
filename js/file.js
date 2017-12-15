@@ -19,8 +19,32 @@ console.log("We ready");
 
 	//timers
 	var checkObPos = 400;
-
+	$('h3').hide();
     $('#car1').hide();
+    $('#play').hide();
+    $('p').hide();
+    $('.intro1').delay(1000).fadeIn(500,function () {
+    	$('.intro2').delay(1000).fadeIn(1000,function(){
+    		$('.intro3').delay(3000).fadeIn(1000,function(){
+    			$('.intro4').delay(4000).fadeIn(1000,function(){
+    				$('#play').delay(2000).fadeIn(1000);
+    			});
+    		});
+    	});
+    });
+    // $('.intro1').fadeIn(1000,'linear',function () {
+    // 	$('.intro2').fadeIn(4000,'linear', function(){
+    // 		$('.intro3').fadeIn(4000, 'linear',function(){
+    // 			$('.intro4').fadeIn(4000,'linear', function(){
+    // 				$('#play').fadeIn(2000,'linear');
+    // 			});
+    // 		});
+    // 	});
+    // });
+    // $('.intro2').fadeIn(4000);   
+    // $('.intro3').fadeIn(6000);
+    // $('.intro4').fadeIn(8000);
+    // $('#play').fadeIn(10000);
 	//Hides car 2 till mulitplayer 
 	// $('#car2').hide();
 	$( '<div></div>').appendTo('#gameboard').addClass('white');
@@ -32,6 +56,8 @@ console.log("We ready");
 			pushOb1();  // Starts obsacels 
 			$('.white').fadeOut("slow");
 			$('#car1').show();
+			$('h3').show();
+			$('p').remove();
 			
 		$('#play').remove();  //Removes button. 
 		});
@@ -49,21 +75,13 @@ console.log("We ready");
 
 
 	//------ROAD MOVEMENT------
-	// $('<div></div>').appendTo('#gameboard').attr('id', 'road1').addClass('road roadStart');
-	//   //$('#road1').css({left:'1'});
-	 
-	//   $('.roadStart').velocity({top:'700px'}, 3650, 'linear',function() {
-	//     $(this).remove();
-	// 	});
-
 	var road1Num = 1;
-	function createRoad (){	
-	  if(gameOver == true){  //Stops time if car hit
+	function createRoad (){	 //Creates a feeling of movement
+	  if(gameOver == true){  
       		$(this).stop();
       		return;
       		}
       		else{
-	  
 	  $('<div></div>').appendTo('#gameboard').attr('id', 'road1' + road1Num).addClass('road');
 	  $('#road1' + road1Num).css({left:'1'});
 	  $('#road1' + road1Num).velocity({top:'700px'}, 3500, 'linear',function() {
@@ -81,13 +99,13 @@ createRoad();
       		else{	
 		window.setInterval(function(){
 			createRoad();
-		}, 1545);//3 seconds create ime
+		}, 1545);// creates a road on a interval
 
 	}
 	}
 
 
-pushroad1();
+pushroad1();  //pushes continious road image
 
 	//------PLAYER MOVEMENT------
 	var $car = $('.car');

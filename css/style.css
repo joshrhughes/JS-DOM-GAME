@@ -8,6 +8,20 @@ body{
 
 }
 
+p{
+	display: inline;
+	float: left;
+	font-size: 15px;
+	margin: 10px 50px;
+	line-height: 25px;
+	
+
+}
+
+.intro1{
+	margin-top:  50px;
+}
+
 .white{
 	width: 800px;
 	height: 700px;
@@ -27,7 +41,7 @@ body{
 }
 
 #gameboard {
-    border:1px solid black;
+    border: 5px solid #172A3A;
     background: #272626;
     background: url("../assets/road.png") no-repeat;
     background-size: 100%;
@@ -37,18 +51,21 @@ body{
    overflow: hidden;
    position: relative;
    z-index: -5;
+
    
     
 }
 
 .button{
 float: right;
-top: 300px;
-left: 125px;
+top: 520px;
+left: 50px;
 position: absolute;
-color: blue;
+color: #172A3A;
+border: 5px solid #172A3A;
+padding: 10px;
 font-family: 'Press Start 2P', cursive;
-border-radius: 3px;
+font-size: 18px;
 z-index: 5;
 pointer-events:auto;
 }
