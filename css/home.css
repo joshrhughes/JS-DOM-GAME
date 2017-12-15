@@ -42,3 +42,15 @@ img{
 	margin: 0px 19px -8px 100px;
 	display: inline;
 }
+
+button{
+	float: right;
+    top: 520px;
+    left: 50px;
+    position: absolute;
+    color: #172A3A;
+    border: 5px solid #172A3A;
+    padding: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+}
