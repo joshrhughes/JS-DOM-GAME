@@ -60,10 +60,39 @@ console.log("We ready");
 	//------TIMER------
 
 	//create time on board
-	$('<div>TIMER</div>').appendTo('#gameboard').attr('id', 'clock');
-	  //$('#clock').css({float: 'left', color: 'black', });
-	
+	  var minutesLabel = document.getElementById("minutes");
+      var secondsLabel = document.getElementById("seconds");
+      var totalSeconds = 0;
+      setInterval(setTime, 1000);
 
+
+      function setTime(){
+      	if(gameOver == true){  //Stops time if car hit
+      		return;
+      		}
+      		else{
+            ++totalSeconds;
+            secondsLabel.innerHTML = pad(totalSeconds%60);
+            minutesLabel.innerHTML = pad(parseInt(totalSeconds/60));
+        }
+      
+      }
+
+        function pad(val){
+            var valString = val + "";
+            if(valString.length < 2)
+            {
+                return "0" + valString;
+            }
+            else
+            {
+                return valString;
+            }
+        }
+	
+        if (car1running === false){
+        	setTime.stop();
+        }
 
 	//------OBSTACLES------
 	var ob1Speed = 5000;
@@ -72,28 +101,35 @@ console.log("We ready");
 
 	//Creates obsacles at top
 	function createRanOb (){	
+	  if(gameOver == true){  //Stops time if car hit
+      		return;
+      		}
+      		else{
 	  var array = [ 15, 75, 300, 500]; //lanes on y axis
 	  var randomOb = array[Math.floor(Math.random() * array.length)];
 	  $('<div></div>').appendTo('#gameboard').attr('id', 'ob1n' + ob1Num).addClass('ob1 ob');
 	  $('#ob1n' + ob1Num).css({left:randomOb, zIndex: '-1'});
 	  $('#ob1n' + ob1Num).velocity({top:'700px'}, ob1Speed, 'linear',function() {
 	    $(this).remove();
-	  
 	  });
-	  $ob = $('.ob');
-	  // console.log($ob.position());
 	  ob1Num++;
-	  return $ob;
-
+	  if (gameOver == true){
+	    	$(this).stop();
+	    }
+	}
 	}
 
 
 	//Will push random obsacles at set interval
 	function pushOb1(){
+		if(gameOver == true){  //Stops time if car hit
+      		return;
+      		}
+      		else{
 		window.setInterval(function(){
 			createRanOb();
 		}, 3000);//3 seconds create ime
-
+	}
 	}
 
 pushOb1();
@@ -114,10 +150,10 @@ function obPosition() {
       x1 > (x3 + $(this).outerWidth(true))) {
     } else {
       car1running = false;
-      $(this).stop();
-      alert("you dead");
-      return;
-      // console.log(true + " dead");
+      gameOver = true;
+      // $(this).stop();
+      console.log("you dead");
+      $(this).remove();
     }
   });
 }  
