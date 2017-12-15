@@ -22,6 +22,18 @@ p{
 	margin-top:  50px;
 }
 
+
+
+.outro{
+	color:white;
+	text-align: center;
+	margin-left: 60px;
+}
+
+.outro1{
+	margin-top: 50px;
+}
+
 .white{
 	width: 800px;
 	height: 700px;
@@ -51,9 +63,6 @@ p{
    overflow: hidden;
    position: relative;
    z-index: -5;
-
-   
-    
 }
 
 .button{
@@ -68,6 +77,14 @@ font-family: 'Press Start 2P', cursive;
 font-size: 18px;
 z-index: 5;
 pointer-events:auto;
+}
+
+#playAgain{
+	color:white;
+	border:5px solid white;
+	background-color: black;
+	top:340px;
+	left: 90px;
 }
 
 .road{
@@ -111,7 +128,9 @@ pointer-events:auto;
 }
 
 #car2{
-	background: red;
+	background: url("../assets/4runner2.png") no-repeat;
+	top: 465px;
+	left: 270px;
 }
 
 
@@ -121,12 +140,15 @@ pointer-events:auto;
 	position: absolute;
 	background: grey;
 }
-.ob1{
+.ob1,.ob2{
 	height: 100px;
 	top: -150px;
 	background: url("../assets/carOb1.png") no-repeat;
 	background-size: 100%;
+}
 
+.ob2{
+	background: url("../assets/carOb2.png") no-repeat;
 }
 
 
