@@ -1,3 +1,5 @@
+
+/*MAIN BODY ELEMENTS*/
 body{
 	/*background: red;*/
 	width: 800px
@@ -5,7 +7,6 @@ body{
 	max-height: 1200px;
 	font-family: 'Press Start 2P', cursive;
 	pointer-events:none;
-
 }
 
 p{
@@ -14,15 +15,11 @@ p{
 	font-size: 15px;
 	margin: 10px 50px;
 	line-height: 25px;
-	
-
 }
-
+/*INTRO/OUTRO FADES*/
 .intro1{
 	margin-top:  50px;
 }
-
-
 
 .outro{
 	color:white;
@@ -34,13 +31,15 @@ p{
 	margin-top: 50px;
 }
 
+.mOutro{
+	height: 200px;
+}
+
 .white{
 	width: 800px;
 	height: 700px;
 	background: white;
-	z-index: 15;
-	
-	
+	z-index: 15;	
 }
 
 .black{
@@ -48,8 +47,7 @@ p{
 	height: 700px;
 	background: black;
 	z-index: 15;
-	display: none;
-	
+	display: none;	
 }
 
 #gameboard {
@@ -59,24 +57,29 @@ p{
     background-size: 100%;
     height: 600px;
     width: 400px;
-    margin-left: 200px;
-   overflow: hidden;
-   position: relative;
-   z-index: -5;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    z-index: -5;
+}
+/*BUTTONS*/
+.button{
+    float: right;
+    top: 520px;
+    left: 50px;
+    position: absolute;
+    color: #172A3A;
+    border: 5px solid #172A3A;
+    padding: 10px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    z-index: 5;
+    pointer-events:auto;
 }
 
-.button{
-float: right;
-top: 520px;
-left: 50px;
-position: absolute;
-color: #172A3A;
-border: 5px solid #172A3A;
-padding: 10px;
-font-family: 'Press Start 2P', cursive;
-font-size: 18px;
-z-index: 5;
-pointer-events:auto;
+.mButton{
+	top: 500px;
+	left: 110px;
 }
 
 #playAgain{
@@ -86,7 +89,7 @@ pointer-events:auto;
 	top:340px;
 	left: 90px;
 }
-
+/*ROAD STYLES*/
 .road{
 	height: 600px;
     width: 400px;
@@ -102,7 +105,7 @@ pointer-events:auto;
 	background: white;
 	z-index: 4;
 }
-
+/*CLOCK*/
 #clock {        /*Styling the clock */
 	float: left;
 	margin: 30px;
@@ -110,7 +113,7 @@ pointer-events:auto;
 	z-index: 3;
 	display: inline;
 }
-
+/*CARS*/
 .car{
 	height: 110px;
 	width: 50px;
@@ -132,8 +135,7 @@ pointer-events:auto;
 	top: 465px;
 	left: 270px;
 }
-
-
+/*OBJECTS */
 .ob{
 	height: 100px;
 	width: 50px;

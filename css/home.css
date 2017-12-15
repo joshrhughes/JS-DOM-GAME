@@ -1,0 +1,44 @@
+body{
+	width: 800px
+	height: 700px;
+	max-height: 600px;
+	font-family: 'Press Start 2P', cursive;
+	background: url("../assets/i70sucks.jpg") no-repeat;
+    background-size: 100%;
+    color: white;
+    text-shadow: 1px 1px black, -1px -1px black, -1px 1px black, 1px -1px black;
+}
+
+a{
+	text-decoration: blink;
+	display: block;
+	clear:left;
+	color:white;
+	margin: 5px 50px 0 0;
+	text-align: right;
+	font-size: 11px;
+	z-index: 3;
+
+
+}
+
+div{ text-align: center;
+	height: 100px;
+	width: 530px;
+	margin: 25px auto;
+	display: inline-flex;
+}
+
+h1{
+	
+	top: 50px;
+	left: 500px;
+	text-align: right;
+	font-size: 50px;
+	margin-right: 120px;
+}
+
+img{
+	margin: 0px 19px -8px 100px;
+	display: inline;
+}

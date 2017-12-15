@@ -21,16 +21,16 @@ console.log("We ready");
 	var checkObPos = 400;
 	$('h3').hide();
     $('#car1').hide();
+    $('#car2').hide();
     $('button').hide();
     $('p').hide();
     $('.intro1').delay(1000).fadeIn(500,function () {
     	$('.intro2').delay(1000).fadeIn(1000,function(){
     		$('.intro3').delay(3000).fadeIn(1000,function(){
-    			$('.intro4').delay(3000).fadeIn(1000,function(){
     				$('#play').delay(2000).fadeIn(1000);
     				$("#play").velocity({
   						translateY: "-10px"}, {loop: true}).velocity("reverse");
-    			});
+    		
     		});
     	});
     });
@@ -47,6 +47,7 @@ console.log("We ready");
 			// $(this).delay(12000).pushOb2();  // Starts obsacels 
 			$('.white').fadeOut("slow");
 			$('#car1').show();
+			$('#car2').show();
 			$('h3').show();
 			$('.intro').hide();
 			
@@ -266,8 +267,8 @@ pushroad1();  //pushes continious road image
 //     });
 //       $(this).remove();
 //     }
-//   });
-// }  
+//   }); ob each
+// }  //obPosition
 //---------
 function obPosition() {
   $('.ob').each( function() {
@@ -284,29 +285,44 @@ function obPosition() {
       x1 > (x3 + $(this).outerWidth(true))) {
         // console.log(false);
     } else {
-      // $('#explosion').get(0).play();
-      car1running = false;
-      removeCar1();
-      alert("YOU MESSED UP PLAYER 1");
-      $(this).stop();
+        car1running = false;
+      	gameOver = true;
+      	$( '<div></div>').appendTo('#gameboard').addClass('black').fadeIn();  //Fades to black
+      	console.log("you dead");
+      	$('.name').append(' PLAYER 1');
+      	$('.outro1').delay(1000).fadeIn(500,function () {  //brings in outro message
+      		$('.outro2').delay(1000).fadeIn(1000,function(){
+    			$('#playAgain').delay(2000).fadeIn(1000, function(){
+    				$("#playAgain").velocity({translateY: "-10px"}, {loop: true}).velocity("reverse");
+    			});
+    		});
+    	});
+      $(this).remove();
+      return;
     }
-    if (car2running = true && (y2 + $('#car2').outerHeight(true)) < y3 ||
-      y2 > (y3 + $(this).outerHeight(true))  ||
-      (x2 + $('#car2').outerWidth(true)) < x3 ||
-      x2 > (x3 + $(this).outerWidth(true))) {
-    	
+    if (car2running === true && (y1 + $('#car2').outerHeight(true)) < y3 ||
+      y1 > (y3 + $(this).outerHeight(true))  ||
+      (x1 + $('#car2').outerWidth(true)) < x3 ||
+      x1 > (x3 + $(this).outerWidth(true))) {
+        // console.log(false);
     } else {
-      car2running =  false;
-      removeCar2();
-      alert("YOU MESSED UP PLAYER 2");
-      $(this).stop();
-     
-   
-      $(this).delay(715).fadeOut();
-     
-    }
+      car2running = false;
+      	gameOver = true;
+      	$( '<div></div>').appendTo('#gameboard').addClass('black').fadeIn();  //Fades to black
+      	console.log("you dead");
+      	$('.name').append('PLAYER 2');
+      	$('.outro1').delay(1000).fadeIn(500,function () {  //brings in outro message
+      		$('.outro2').delay(1000).fadeIn(1000,function(){
+    			$('#playAgain').delay(2000).fadeIn(1000, function(){
+    				$("#playAgain").velocity({translateY: "-10px"}, {loop: true}).velocity("reverse");
+    			});
+    		});
+    	});
+      $(this).remove();
+      return;
+	}  
   });
-}  
+}
 
 // Removes player one from gameboard
 function removeCar1() {
