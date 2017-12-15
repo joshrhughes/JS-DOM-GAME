@@ -181,7 +181,7 @@ pushroad1();  //pushes continious road image
 	  if (gameOver == true){
 	    	$(this).stop();
 	    }
-	}
+	  }
 	}
 
 
@@ -195,7 +195,7 @@ pushroad1();  //pushes continious road image
 			createRanOb1();
 		}, 3000);//3 seconds create ime
 	
-	}
+	  }
 	}
 
 	// obstacle 2
@@ -235,8 +235,6 @@ pushroad1();  //pushes continious road image
 	
 	}
 	}
-
-// pushOb1();
 
 
 //------Collision------

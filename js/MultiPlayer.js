@@ -236,40 +236,9 @@ pushroad1();  //pushes continious road image
 	}
 	}
 
-// pushOb1();
-
 
 //------Collision------
 
-// function obPosition() {
-//   $('.ob').each( function() {
-//     var x1 = $('#car1').position().left;
-//     var y1 = $('#car1').position().top;
-//     var x3 = $(this).position().left;
-//     var y3 = $(this).position().top;
-
-//     if (car1running === true && (y1 + $('#car1').outerHeight(true)) < y3 ||
-//       y1 > (y3 + $(this).outerHeight(true))  ||
-//       (x1 + $('#car1').outerWidth(true)) < x3 ||
-//       x1 > (x3 + $(this).outerWidth(true))) {
-//     } else {
-//       car1running = false;
-//       gameOver = true;
-//       $( '<div></div>').appendTo('#gameboard').addClass('black').fadeIn();  //Fades to black
-//       console.log("you dead");
-      
-//       $('.outro1').delay(1000).fadeIn(500,function () {  //brings in outro message
-//       	$('.outro2').delay(1000).fadeIn(1000,function(){
-//     		$('#playAgain').delay(2000).fadeIn(1000, function(){
-//     			$("#playAgain").velocity({translateY: "-10px"}, {loop: true}).velocity("reverse");
-//     		});
-//     	});
-//     });
-//       $(this).remove();
-//     }
-//   }); ob each
-// }  //obPosition
-//---------
 function obPosition() {
   $('.ob').each( function() {
     var x1 = $('#car1').position().left;
