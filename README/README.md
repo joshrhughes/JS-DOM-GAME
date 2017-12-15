@@ -31,6 +31,12 @@ In layman's terms, I will have a player "drive" a car to avoid unending obsticls
  - Not sure how to make two player mode happen at the same time with identical obsticles as opposed to Player 1 playing and then player two playing.
 
 
+## Resources Used
+
+ - Jquery - DOM Manipulation
+ - Velocity.js - Smoother animation
+ - Google - Everything
+
 ## Trello
 
 [My Trello Board](https://trello.com/b/Advm7G6D/project-1-user-stories)
