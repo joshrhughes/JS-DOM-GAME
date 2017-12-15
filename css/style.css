@@ -132,8 +132,10 @@ p{
 
 #car2{
 	background: url("../assets/4runner2.png") no-repeat;
+	background-size: 100%;
 	top: 465px;
-	left: 270px;
+	left: 260px;
+
 }
 /*OBJECTS */
 .ob{

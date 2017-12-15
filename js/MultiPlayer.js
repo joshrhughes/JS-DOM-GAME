@@ -97,7 +97,7 @@ pushroad1();  //pushes continious road image
 
 	//Player 1 Movement
 	var car1Score = 0;
-	var car2Score = 0; // to keep car in boundaries
+	var car2Score = 2; // to keep car in boundaries
 
 	$(document).keyup(function(move){  
 		$car = $('.car');
@@ -115,7 +115,7 @@ pushroad1();  //pushes continious road image
 	// Player 2 Movement 
 	$(document).keyup(function(move){  
 		$car = $('.car');
-		if ((move.keyCode == 68) && (car2Score >= 4)){//Right Movement
+		if ((move.keyCode == 68) && (car2Score <= 4)){//Right Movement
 			$("#car2").velocity({left: "+=30px"},2);
 			car2Score +=1;
 		}
