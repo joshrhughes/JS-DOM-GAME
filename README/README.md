@@ -1,8 +1,7 @@
-# Project-1
+# **Project-1**
 
 
-# I-70 SUCKS
-## The Game
+# **I-70 SUCKS**: The Game
 
 [Go play it!](https://joshrhughes.github.io/Project-1/homepage.html)
 
@@ -27,7 +26,7 @@ In layman's terms, I will have a player "drive" a car to avoid unending obsticls
 
 ## Chalenges
 
- - Will use Phaser framework to set up game physics which I haven't used before.
+ - ~~Will use Phaser framework to set up game physics which I haven't used before.~~
  - Making a scoreboad that stores scores locally.
  - Not sure how to make two player mode happen at the same time with identical obsticles as opposed to Player 1 playing and then player two playing.
 
@@ -37,11 +36,11 @@ In layman's terms, I will have a player "drive" a car to avoid unending obsticls
 [My Trello Board](https://trello.com/b/Advm7G6D/project-1-user-stories)
 
 ## Requirements
-- [] Render a game in the browser
-- [] Include two players (either two humans, or human and computer)
-- [] Design logic for winning & visually display which player won
-- [] Include separate HTML / CSS / JavaScript files
-- [] Stick with KISS (Keep It Simple Stupid) and DRY (Don't Repeat Yourself) principles
-- [] Use Javascript or jQuery for DOM manipulation
-- [] Deploy your game online, where the rest of the world can access it
-- [] Use semantic markup for HTML and CSS (adhere to best practices)
+- [x] Render a game in the browser
+- [x] Include two players (either two humans, or human and computer)
+- [x] Design logic for winning & visually display which player won
+- [x] Include separate HTML / CSS / JavaScript files
+- [?] Stick with KISS (Keep It Simple Stupid) and DRY (Don't Repeat Yourself) principles
+- [x] Use Javascript or jQuery for DOM manipulation
+- [x] Deploy your game online, where the rest of the world can access it
+- [?] Use semantic markup for HTML and CSS (adhere to best practices)
