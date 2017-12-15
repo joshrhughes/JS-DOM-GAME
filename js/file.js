@@ -20,41 +20,107 @@ console.log("We ready");
 	//timers
 	var checkObPos = 400;
 
+    $('#car1').hide();
 	//Hides car 2 till mulitplayer 
 	// $('#car2').hide();
+	$( '<div></div>').appendTo('#gameboard').addClass('white');
+	//------BUTTONS-----
 
+	$('#play').click(function(){
+			gameStart = true;
+			setInterval(setTime, 1000); //Starts Timer
+			pushOb1();  // Starts obsacels 
+			$('.white').fadeOut("slow");
+			$('#car1').show();
+			
+		$('#play').remove();  //Removes button. 
+		});
+		
+
+
+	
+
+
+
+
+
+
+
+
+
+	//------ROAD MOVEMENT------
+	// $('<div></div>').appendTo('#gameboard').attr('id', 'road1').addClass('road roadStart');
+	//   //$('#road1').css({left:'1'});
+	 
+	//   $('.roadStart').velocity({top:'700px'}, 3650, 'linear',function() {
+	//     $(this).remove();
+	// 	});
+
+	var road1Num = 1;
+	function createRoad (){	
+	  if(gameOver == true){  //Stops time if car hit
+      		$(this).stop();
+      		return;
+      		}
+      		else{
+	  
+	  $('<div></div>').appendTo('#gameboard').attr('id', 'road1' + road1Num).addClass('road');
+	  $('#road1' + road1Num).css({left:'1'});
+	  $('#road1' + road1Num).velocity({top:'700px'}, 3500, 'linear',function() {
+	    $(this).remove();
+	  });
+	  road1Num++;
+	}
+}
+createRoad();
+	function pushroad1(){
+		if(gameOver == true){  //Stops time if car hit
+      		$(this).stop();
+      		return;
+      		}
+      		else{	
+		window.setInterval(function(){
+			createRoad();
+		}, 1545);//3 seconds create ime
+
+	}
+	}
+
+
+pushroad1();
 
 	//------PLAYER MOVEMENT------
 	var $car = $('.car');
 
 	//Player 1 Movement
-	var car1Score = 0; // to keep car in boundaries
+	var car1Score = 0;
+	var car2Score = 0; // to keep car in boundaries
 
 	$(document).keyup(function(move){  
 		$car = $('.car');
-		if ((move.keyCode == 39) && (car1Score <= 2)){//Right Movement
-				$("#car1").velocity({left: "+=50px"},2);
+		if ((move.keyCode == 39) && (car1Score <= 4)){//Right Movement
+				$("#car1").velocity({left: "+=30px"},2);
 				car1Score +=1;
 				
 	}
-		if ((move.keyCode == 37) && (car1Score >= -2)){//Left 
-			$("#car1").velocity({left: "-=50px"},2);
+		if ((move.keyCode == 37) && (car1Score >= -4)){//Left 
+			$("#car1").velocity({left: "-=30px"},2);
 			car1Score -=1;
 			
 		}
 	});
-	//Player 2 Movement 
-	// $(document).keyup(function(move){  
-	// 	$car = $('.car');
-	// 	if (move.keyCode == 68){//Right Movement
-	// 		$("#car2").velocity({left: "+=50px"},2);
-			
-	// 	}
-	// 	if (move.keyCode == 65){// Left
-	// 		$("#car2").velocity({left: "-=50px"},2);
-
-	// 	}
-	// });
+	// Player 2 Movement 
+	$(document).keyup(function(move){  
+		$car = $('.car');
+		if ((move.keyCode == 68) && (car2Score >= 4)){//Right Movement
+			$("#car2").velocity({left: "+=30px"},2);
+			car2Score +=1;
+		}
+		if ((move.keyCode == 65) && (car2Score >= -4)){// Left
+			$("#car2").velocity({left: "-=30px"},2);
+			car2Score -=1;
+		}
+	});
 
 	//**************************************************possibly use animate to make car movement smooth
 	//------TIMER------
@@ -63,7 +129,9 @@ console.log("We ready");
 	  var minutesLabel = document.getElementById("minutes");
       var secondsLabel = document.getElementById("seconds");
       var totalSeconds = 0;
-      setInterval(setTime, 1000);
+      
+
+      // setInterval(setTime, 1000);
 
 
       function setTime(){
@@ -80,24 +148,18 @@ console.log("We ready");
 
         function pad(val){
             var valString = val + "";
-            if(valString.length < 2)
-            {
+            if(valString.length < 2){
                 return "0" + valString;
             }
-            else
-            {
+            else{
                 return valString;
             }
         }
 	
-        if (car1running === false){
-        	setTime.stop();
-        }
-
+      
 	//------OBSTACLES------
 	var ob1Speed = 5000;
 	var ob1Num = 1;
-	var $ob = $('.ob');
 
 	//Creates obsacles at top
 	function createRanOb (){	
@@ -105,7 +167,7 @@ console.log("We ready");
       		return;
       		}
       		else{
-	  var array = [ 15, 75, 300, 500]; //lanes on y axis
+	  var array = [ 60, 175, 290]; //lanes on y axis
 	  var randomOb = array[Math.floor(Math.random() * array.length)];
 	  $('<div></div>').appendTo('#gameboard').attr('id', 'ob1n' + ob1Num).addClass('ob1 ob');
 	  $('#ob1n' + ob1Num).css({left:randomOb, zIndex: '-1'});
@@ -129,10 +191,11 @@ console.log("We ready");
 		window.setInterval(function(){
 			createRanOb();
 		}, 3000);//3 seconds create ime
+	
 	}
 	}
 
-pushOb1();
+// pushOb1();
 
 
 //------Collision------
@@ -151,9 +214,10 @@ function obPosition() {
     } else {
       car1running = false;
       gameOver = true;
-      // $(this).stop();
+      $( '<div></div>').appendTo('#gameboard').addClass('black').fadeIn();  //Fades to black
       console.log("you dead");
       $(this).remove();
+      // gameOverMessage();
     }
   });
 }  

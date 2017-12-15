@@ -4,31 +4,82 @@ body{
 	height: 700px;
 	max-height: 1200px;
 	font-family: 'Press Start 2P', cursive;
+	pointer-events:none;
 
+}
+
+.white{
+	width: 800px;
+	height: 700px;
+	background: white;
+	z-index: 15;
+	
+	
+}
+
+.black{
+	width: 800px;
+	height: 700px;
+	background: black;
+	z-index: 15;
+	display: none;
+	
 }
 
 #gameboard {
     border:1px solid black;
-    background-color: green;
+    background: #272626;
+    background: url("../assets/road.png") no-repeat;
+    background-size: 100%;
     height: 600px;
     width: 400px;
     margin-left: 200px;
    overflow: hidden;
    position: relative;
    z-index: -5;
+   
     
 }
 
-#clock {
+.button{
+float: right;
+top: 300px;
+left: 125px;
+position: absolute;
+color: blue;
+font-family: 'Press Start 2P', cursive;
+border-radius: 3px;
+z-index: 5;
+pointer-events:auto;
+}
+
+.road{
+	height: 600px;
+    width: 400px;
+	background: url("../assets/road.png") no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: -650px;
+    z-index: -2;
+}
+
+.roadStart{     /*What it looks like when the screen loads */
+	top: 0px;
+	background: white;
+	z-index: 4;
+}
+
+#clock {        /*Styling the clock */
 	float: left;
 	margin: 30px;
 	color: white;	
 	z-index: 3;
+	display: inline;
 }
 
 .car{
-	height: 91px;
-	width: 42px;
+	height: 110px;
+	width: 50px;
 	position: absolute;
 	background: yellow;
 	
@@ -36,8 +87,8 @@ body{
 
 #car1{
 	
-	top: 500px;
-	left: 165px;
+	top: 465px;
+	left: 170px;
 	background: url("../assets/4runner1.png") no-repeat;
 	background-size: 100%;
 }
@@ -48,8 +99,8 @@ body{
 
 
 .ob{
-	height: 90px;
-	width: 40px;
+	height: 100px;
+	width: 50px;
 	position: absolute;
 	background: grey;
 }
@@ -60,3 +111,6 @@ body{
 	background-size: 100%;
 
 }
+
+
+
