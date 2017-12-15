@@ -2,6 +2,10 @@
 
 
 # I-70 SUCKS
+## The Game
+
+[Go play it!](https://joshrhughes.github.io/Project-1/homepage.html)
+
 
 
 ## What?
