@@ -1,6 +1,6 @@
 console.log("hello world");
 
-//------ENGAGE JS------
+//------ENGAGE JS-------
 
 $().ready(function(){
   
